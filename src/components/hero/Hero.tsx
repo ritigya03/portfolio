@@ -93,11 +93,8 @@ export function Hero({ onSecret }: { onSecret: () => void }) {
         </motion.div>
 
         <motion.div
-          style={
-            reduced
-              ? undefined
-              : { x: useSpring(mx, { stiffness: 40, damping: 18 }), y: py }
-          }
+          style={{ x: px2, y: py2 }}
+
           initial={{ opacity: 0, scale: 0.94, filter: "blur(16px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.4, delay: 0.3, ease: [0.19, 1, 0.22, 1] }}
