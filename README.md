@@ -1008,21 +1008,11 @@ It should make someone curious enough to scroll all the way to the bottom.
 
 Start with the frontend only and use realistic content/placeholders based on the information above. Do not add backend functionality.
 
-Before implementing, use Lovable's design-direction/design-guidance process if available and choose the direction closest to this exact visual brief.
 
 Build the site component-by-component with a consistent design system rather than generating unrelated sections.
 
 Ask me any questions you need before implementation if something essential is unclear.
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/f8ccaabd-ea81-4340-ac39-ce72ca965311).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
