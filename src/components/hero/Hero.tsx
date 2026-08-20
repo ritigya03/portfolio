@@ -11,6 +11,9 @@ export function Hero({ onSecret }: { onSecret: () => void }) {
   const my = useMotionValue(0);
   const px = useSpring(mx, { stiffness: 60, damping: 20 });
   const py = useSpring(my, { stiffness: 60, damping: 20 });
+  const px2 = useSpring(mx, { stiffness: 34, damping: 18 });
+  const py2 = useSpring(my, { stiffness: 34, damping: 18 });
+
 
   const onMove = (e: React.MouseEvent) => {
     if (reduced) return;
