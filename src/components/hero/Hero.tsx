@@ -29,9 +29,10 @@ export function Hero({ onSecret }: { onSecret: () => void }) {
 
       <div className="mx-auto grid w-full max-w-6xl items-center gap-14 md:grid-cols-[1.15fr_0.85fr]">
         <motion.div
-          style={reduced ? undefined : { x: px, y: py }}
+          style={{ x: px, y: py }}
           className="relative z-10"
         >
+
           <motion.span
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
