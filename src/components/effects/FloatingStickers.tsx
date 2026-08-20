@@ -42,9 +42,10 @@ export function FloatingStickers({
           style={{ left: s.left, top: s.top, fontSize: s.size }}
           animate={
             reduced
-              ? undefined
+              ? { y: 0, opacity: 0.7 }
               : { y: [0, -14, 0], opacity: found.includes(i) ? [1, 0.4, 1] : [0.5, 0.95, 0.5] }
           }
+
           transition={{
             duration: 7 + i,
             delay: s.delay,
