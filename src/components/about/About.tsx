@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { ScrollConstellation } from "@/components/effects/ScrollConstellation";
 
 const TECH = [
   "AI / ML",
@@ -30,6 +31,7 @@ export function About({
 }) {
   return (
     <section id="about" className="relative px-6 py-28 sm:py-36">
+      <ScrollConstellation side="right" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           title={

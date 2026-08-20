@@ -4,12 +4,15 @@ import { AnimatePresence, motion } from "motion/react";
 
 import { CustomCursor } from "@/components/effects/CustomCursor";
 import { HolographicBackground } from "@/components/effects/HolographicBackground";
+import { FluidCanvas } from "@/components/effects/FluidCanvas";
+import { CrystalShimmer } from "@/components/effects/CrystalShimmer";
+import { ButterflyTrail } from "@/components/effects/ButterflyTrail";
 import { FloatingNav } from "@/components/navigation/FloatingNav";
 import { Hero } from "@/components/hero/Hero";
-import { About } from "@/components/about/About";
 import { Projects } from "@/components/projects/Projects";
 import { Experience } from "@/components/experience/Experience";
 import { Skills } from "@/components/skills/Skills";
+import { GithubActivity } from "@/components/github/GithubActivity";
 import { Currently } from "@/components/currently/Currently";
 import { Scrapbook } from "@/components/scrapbook/Scrapbook";
 import { Contact, Footer } from "@/components/contact/Contact";
@@ -52,6 +55,9 @@ function Index() {
       className="relative min-h-screen font-body text-plum-deep"
     >
       <HolographicBackground />
+      <FluidCanvas />
+      <CrystalShimmer />
+      <ButterflyTrail />
       <CustomCursor />
       <FloatingNav />
 
@@ -63,15 +69,10 @@ function Index() {
       >
         <main>
           <Hero onSecret={onSecret} />
-          <About
-            mood={mood}
-            onToggleMood={() =>
-              setMood((m) => (m === "tech" ? "dream" : "tech"))
-            }
-          />
           <Projects />
           <Experience />
           <Skills />
+          <GithubActivity />
           <Currently />
           <Scrapbook />
           <Contact onSecret={onSecret} />

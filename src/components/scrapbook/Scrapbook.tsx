@@ -1,9 +1,10 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import fashion from "@/assets/scrap-fashion.jpg";
-import nature from "@/assets/scrap-nature.jpg";
-import rituals from "@/assets/scrap-rituals.jpg";
-import objects from "@/assets/scrap-objects.jpg";
+import fashion from "@/assets/hobby-fashion.png";
+import painting from "@/assets/hobby-painting.jpeg";
+import dancing from "@/assets/hobby-dancing.jpeg";
+import reading from "@/assets/hobby-reading.jpeg";
+import travelling from "@/assets/hobby-travelling.jpeg";
 
 type Item =
   | { kind: "photo"; src: string; label: string; ratio: string; tilt: string }
@@ -13,22 +14,22 @@ const COLUMNS: Item[][] = [
   [
     {
       kind: "photo",
-      src: fashion,
-      label: "fashion",
+      src: painting,
+      label: "painting",
       ratio: "aspect-[4/5]",
       tilt: "rotate-2",
     },
     {
       kind: "note",
-      text: "thinking about silk & circuit boards...",
+      text: "color palettes & canvases ✦",
       tilt: "-rotate-3",
     },
   ],
   [
     {
       kind: "photo",
-      src: nature,
-      label: "little moments",
+      src: dancing,
+      label: "dancing",
       ratio: "aspect-[2/3]",
       tilt: "-rotate-1",
     },
@@ -36,22 +37,31 @@ const COLUMNS: Item[][] = [
   [
     {
       kind: "photo",
-      src: rituals,
-      label: "rituals",
+      src: fashion,
+      label: "fashion",
+      ratio: "aspect-square",
+      tilt: "rotate-3",
+    },
+  ],
+  [
+    {
+      kind: "photo",
+      src: reading,
+      label: "reading",
       ratio: "aspect-square",
       tilt: "rotate-3",
     },
     {
       kind: "note",
-      text: "collecting ideas like postcards ✦",
+      text: "getting lost in new worlds ✦",
       tilt: "rotate-1",
     },
   ],
   [
     {
       kind: "photo",
-      src: objects,
-      label: "things i love",
+      src: travelling,
+      label: "travelling",
       ratio: "aspect-[4/5]",
       tilt: "rotate-[5deg]",
     },
@@ -60,19 +70,19 @@ const COLUMNS: Item[][] = [
 
 export function Scrapbook() {
   return (
-    <section id="beyond" className="relative overflow-hidden px-6 py-28 sm:py-36">
+    <section id="beyond" className="relative overflow-hidden px-4 py-10 sm:py-16">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          title="life outside the terminal 🎀"
+          title="life outside the terminal"
           note="moments, inspiration, and small obsessions"
         />
 
-        <div className="mt-16 grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-6">
+        <div className="mt-16 grid grid-cols-2 gap-5 md:grid-cols-5 md:gap-6">
           {COLUMNS.map((col, ci) => (
             <div
               key={ci}
               className={`space-y-5 md:space-y-6 ${
-                ci === 1 ? "md:pt-12" : ci === 3 ? "md:pt-20" : ""
+                ci % 2 === 1 ? "md:pt-12" : ci === 2 ? "md:pt-6" : ""
               }`}
             >
               {col.map((item, ii) =>

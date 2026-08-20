@@ -1,7 +1,8 @@
 import { motion, useReducedMotion, useMotionValue, useSpring } from "motion/react";
+import { Github, Linkedin, Code2, Trophy, Mail } from "lucide-react";
 import { MagicalButton } from "@/components/ui/MagicalButton";
 import { FloatingStickers } from "@/components/effects/FloatingStickers";
-import portrait from "@/assets/portrait.jpg";
+import portrait from "@/assets/portrait.jpeg";
 
 const KEYWORDS = ["AI", "technology", "security", "creativity", "curiosity"];
 
@@ -26,7 +27,7 @@ export function Hero({ onSecret }: { onSecret: () => void }) {
     <header
       id="me"
       onMouseMove={onMove}
-      className="relative flex min-h-screen items-center overflow-hidden px-6 pb-24 pt-32 sm:pt-36"
+      className="relative flex min-h-screen items-center overflow-hidden px-4 pb-16 pt-24 sm:pt-28"
     >
       <FloatingStickers onSecret={onSecret} />
 
@@ -42,7 +43,7 @@ export function Hero({ onSecret }: { onSecret: () => void }) {
             transition={{ duration: 0.9, ease: [0.19, 1, 0.22, 1] }}
             className="mb-5 block font-hand text-2xl text-accent-pink"
           >
-            ♊︎ hello, i&apos;m ritigya
+            ♊︎ hello, i&apos;m ritigya gupta
           </motion.span>
 
           <motion.h1
@@ -53,7 +54,7 @@ export function Hero({ onSecret }: { onSecret: () => void }) {
           >
             a little bit of
             <br />
-            <span className="italic font-light text-holo">everything.</span>
+            <span className="italic font-light text-green-900">everything.</span>
           </motion.h1>
 
           <motion.div
@@ -70,6 +71,29 @@ export function Hero({ onSecret }: { onSecret: () => void }) {
                 )}
               </span>
             ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.55 }}
+            className="mt-5 flex flex-wrap items-center gap-5 text-plum-muted"
+          >
+            <a href="https://github.com/ritigya03" target="_blank" rel="noreferrer" className="transition-colors hover:text-accent-pink hover:scale-110" aria-label="GitHub">
+              <Github className="size-5" />
+            </a>
+            <a href="https://www.linkedin.com/in/ritigya-gupta/" target="_blank" rel="noreferrer" className="transition-colors hover:text-accent-pink hover:scale-110" aria-label="LinkedIn">
+              <Linkedin className="size-5" />
+            </a>
+            <a href="https://leetcode.com/u/ritigya_g/" target="_blank" rel="noreferrer" className="transition-colors hover:text-accent-pink hover:scale-110" aria-label="LeetCode">
+              <Code2 className="size-5" />
+            </a>
+            <a href="https://devpost.com/ritigya03" target="_blank" rel="noreferrer" className="transition-colors hover:text-accent-pink hover:scale-110" aria-label="Devpost">
+              <Trophy className="size-5" />
+            </a>
+            <a href="mailto:ritigya00003@gmail.com" className="transition-colors hover:text-accent-pink hover:scale-110" aria-label="Email">
+              <Mail className="size-5" />
+            </a>
           </motion.div>
 
           <motion.p
@@ -90,7 +114,7 @@ export function Hero({ onSecret }: { onSecret: () => void }) {
           >
             <MagicalButton href="#work">enter my world →</MagicalButton>
             <MagicalButton href="#work" variant="ghost">
-              view my work
+              view resume
             </MagicalButton>
           </motion.div>
         </motion.div>
@@ -112,9 +136,6 @@ export function Hero({ onSecret }: { onSecret: () => void }) {
               height={1440}
               className="aspect-[3/4] w-full rounded-3xl object-cover"
             />
-            <div className="absolute -bottom-5 -right-4 -rotate-12 rounded-2xl border border-ballet/40 bg-pearl/85 px-4 py-1 font-hand text-2xl text-accent-pink shadow-[var(--shadow-dreamy)]">
-              curiosity! ✦
-            </div>
           </div>
         </motion.div>
       </div>

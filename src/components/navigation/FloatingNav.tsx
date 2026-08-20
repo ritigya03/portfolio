@@ -53,7 +53,7 @@ export function FloatingNav() {
           data-cursor="button"
           className="group relative font-display text-lg font-semibold tracking-tight text-accent-pink sm:text-xl"
         >
-          ♡ RITIGYA
+          ♡ RITIGYA GUPTA
           <span className="pointer-events-none absolute -bottom-6 left-2 rotate-[-8deg] font-hand text-base text-plum-muted opacity-0 transition-opacity duration-500 group-hover:opacity-100">
             hi :)
           </span>

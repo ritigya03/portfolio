@@ -90,22 +90,58 @@
   --ring: var(--dream);
 
   /* gradients + shadows */
-  --gradient-holo: linear-gradient(
-    135deg,
-    var(--blush) 0%,
-    var(--lavender) 25%,
-    var(--pearl) 50%,
-    var(--mint) 75%,
-    var(--ballet) 100%
-  );
-  --gradient-pearl: linear-gradient(
-    140deg,
-    color-mix(in oklab, white 70%, transparent),
-    color-mix(in oklab, var(--blush) 30%, transparent)
-  );
+  --gradient-holo: linear-gradient(135deg,
+      var(--blush) 0%,
+      var(--lavender) 25%,
+      var(--pearl) 50%,
+      var(--mint) 75%,
+      var(--ballet) 100%);
+  --gradient-pearl: linear-gradient(140deg,
+      color-mix(in oklab, white 70%, transparent),
+      color-mix(in oklab, var(--blush) 30%, transparent));
   --shadow-dreamy: 0 8px 32px color-mix(in oklab, var(--dream) 22%, transparent);
   --shadow-float: 0 24px 60px -20px color-mix(in oklab, var(--dream) 45%, transparent);
   --ease-dream: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.dark {
+  /* brand - dark maroon/chic */
+  --pearl: oklch(0.18 0.03 340);
+  --blush: oklch(0.25 0.06 345);
+  --ballet: oklch(0.22 0.08 348);
+  --dream: oklch(0.35 0.12 350);
+  --accent-pink: oklch(0.7 0.2 15);
+  --lavender: oklch(0.28 0.08 330);
+  --periwinkle: oklch(0.25 0.06 300);
+  --mint: oklch(0.2 0.05 183);
+
+  /* Text colors: chic pale gold instead of pearl */
+  --plum-deep: oklch(0.92 0.04 85);
+  --plum-muted: oklch(0.75 0.05 85);
+
+  /* semantic overrides - warmer dark background */
+  --background: oklch(0.14 0.01 340);
+  --foreground: var(--plum-deep);
+  --border: color-mix(in oklab, oklch(0.8 0.15 85) 15%, transparent);
+  --input: color-mix(in oklab, oklch(0.8 0.15 85) 15%, transparent);
+
+  /* chic gold glassmorphism bases for dark mode */
+  --glass-base: black;
+  /* use solid black as base for high contrast */
+  --glass-border: color-mix(in oklab, oklch(0.8 0.15 85) 25%, transparent);
+  --glass-opacity: 0%;
+  --glass-strong-opacity: 0%;
+  
+  /* remove shadows in dark mode for flat glass look */
+  --shadow-dreamy: none;
+  --shadow-float: none;
+}
+
+:root {
+  --glass-base: white;
+  --glass-border: color-mix(in oklab, white 55%, transparent);
+  --glass-opacity: 32%;
+  --glass-strong-opacity: 58%;
 }
 
 @layer base {
@@ -133,16 +169,16 @@
 /* ---------- utilities ---------- */
 
 @utility glass {
-  background: color-mix(in oklab, white 32%, transparent);
+  background: color-mix(in oklab, var(--glass-base) var(--glass-opacity), transparent);
   backdrop-filter: blur(14px) saturate(130%);
-  border: 1px solid color-mix(in oklab, white 55%, transparent);
+  border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-dreamy);
 }
 
 @utility glass-strong {
-  background: color-mix(in oklab, white 58%, transparent);
+  background: color-mix(in oklab, var(--glass-base) var(--glass-strong-opacity), transparent);
   backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid color-mix(in oklab, white 70%, transparent);
+  border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-float);
 }
 
@@ -153,13 +189,11 @@
 }
 
 @utility text-holo {
-  background: linear-gradient(
-    100deg,
-    var(--accent-pink),
-    var(--lavender),
-    var(--periwinkle),
-    var(--accent-pink)
-  );
+  background: linear-gradient(100deg,
+      var(--accent-pink),
+      var(--lavender),
+      var(--periwinkle),
+      var(--accent-pink));
   background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -169,6 +203,7 @@
 
 @utility grain {
   position: relative;
+
   &::after {
     content: "";
     position: absolute;
@@ -183,6 +218,7 @@
 @utility glare {
   position: relative;
   overflow: hidden;
+
   &::before {
     content: "";
     position: absolute;
@@ -190,16 +226,15 @@
     left: -60%;
     width: 45%;
     height: 100%;
-    background: linear-gradient(
-      100deg,
-      transparent,
-      color-mix(in oklab, white 55%, transparent),
-      transparent
-    );
+    background: linear-gradient(100deg,
+        transparent,
+        color-mix(in oklab, white 55%, transparent),
+        transparent);
     transform: skewX(-18deg);
     transition: left 1.1s var(--ease-dream);
     pointer-events: none;
   }
+
   &:hover::before {
     left: 120%;
   }
@@ -210,20 +245,24 @@
 }
 
 @keyframes holo-flow {
+
   0%,
   100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
 }
 
 @keyframes drift {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0);
   }
+
   50% {
     transform: translate3d(0, -14px, 0);
   }
@@ -234,6 +273,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -241,7 +281,22 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+
   html {
     scroll-behavior: auto;
   }
+}
+
+/* Force completely transparent cards in dark mode */
+.dark .glass,
+.dark .glass-strong {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Force project card images background to be transparent in dark mode */
+.dark .project-card-img-bg {
+  background: transparent !important;
 }
