@@ -13,6 +13,8 @@ import p5 from "@/assets/project5.png";
 import p6 from "@/assets/project6.png";
 import p7 from "@/assets/project7.png";
 import p8 from "@/assets/project8.png";
+import p9 from "@/assets/project9.jpg";
+import p10 from "@/assets/project10.jpg";
 
 const PROJECTS: Project[] = [
   {
@@ -90,6 +92,24 @@ const PROJECTS: Project[] = [
     tags: ["Healthcare", "Data", "App"],
     image: p8,
     github: "https://github.com/ritigya03/MedXact_Hack4Health",
+  },
+  {
+    title: "SDLC AI Verifier",
+    subtitle: "AI / Software Engineering",
+    description: "An AI-powered Decision Support System that analyzes software project artifacts and evaluates compliance with each phase of the Software Development Life Cycle.",
+    longDescription: "SDLC AI Verifier is an intelligent web application that acts as an automated quality assurance layer for software projects.\n\nIt analyzes uploaded project artifacts — documentation, code, test reports — and evaluates their adherence to each phase of the Software Development Life Cycle: Requirements, Design, Development, Testing, and Maintenance.\n\nThe system functions as a Decision Support System (DSS), providing automated compliance scores, phase-specific feedback, and actionable recommendations to bridge gaps in documentation and development practices. Built to support developers and reviewers in maintaining consistent software quality standards.",
+    tags: ["AI", "Web App", "Software Engineering", "DSS"],
+    image: p9,
+    github: "https://github.com/ritigya03/Framework_DSS",
+  },
+  {
+    title: "Minesweeper in Haskell",
+    subtitle: "Functional Programming / Game Dev",
+    description: "A duck-themed Minesweeper game with a custom Haskell GUI — pure functional programming brought to life with a playful twist.",
+    longDescription: "A fully functional Minesweeper game built entirely in Haskell, featuring a custom graphical user interface and an adorable rubber duck theme.\n\nThis was a collaborative team project that explored the power of purely functional programming for game development. The board logic was implemented from scratch in Haskell, including mine placement, neighbour counting, cell reveal mechanics, and win/loss detection.\n\nThe GUI was designed to be charming and interactive — replacing standard flags with rubber ducks and giving the classic game a fresh, whimsical identity. A fun deep-dive into Haskell's type system, IO monads, and functional game loops.",
+    tags: ["Haskell", "Functional Programming", "Game Dev", "GUI"],
+    image: p10,
+    github: "https://github.com/ritigya03/Minesweeper_haskell",
   },
 ];
 

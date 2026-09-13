@@ -43,6 +43,14 @@ function Index() {
 
   const onSecret = useCallback(() => setSecret(true), []);
 
+  // Always open to the Me section on load
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      history.scrollRestoration = "manual";
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+  }, []);
+
   useEffect(() => {
     if (!secret) return;
     const t = setTimeout(() => setSecret(false), 2400);
