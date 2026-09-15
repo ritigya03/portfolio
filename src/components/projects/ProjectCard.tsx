@@ -12,6 +12,7 @@ export type Project = {
   featured?: boolean;
   github?: string;
   devpost?: string;
+  live?: string;
 };
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -118,6 +119,17 @@ export function ProjectCard({ project }: { project: Project }) {
                 ))}
               </div>
               <div className="mt-8 flex flex-wrap items-center gap-6 text-xs font-medium uppercase tracking-[0.18em]">
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor="button"
+                    className="flex items-center gap-2 text-accent-pink transition-all hover:gap-3"
+                  >
+                    live demo ↗
+                  </a>
+                )}
                 {project.devpost && (
                   <a
                     href={project.devpost}

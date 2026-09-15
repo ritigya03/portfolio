@@ -15,6 +15,8 @@ import p7 from "@/assets/project7.png";
 import p8 from "@/assets/project8.png";
 import p9 from "@/assets/project9.jpg";
 import p10 from "@/assets/project10.jpg";
+import p11 from "@/assets/project11.jpg";
+import p12 from "@/assets/project12.jpg";
 
 const PROJECTS: Project[] = [
   {
@@ -110,6 +112,26 @@ const PROJECTS: Project[] = [
     tags: ["Haskell", "Functional Programming", "Game Dev", "GUI"],
     image: p10,
     github: "https://github.com/ritigya03/Minesweeper_haskell",
+  },
+  {
+    title: "ConduitAI",
+    subtitle: "AI / Data Engineering",
+    description: "An end-to-end B2B customer data onboarding pipeline — LLM-assisted schema mapping, human review, deterministic transform, and idempotent loading.",
+    longDescription: "ConduitAI is a production-grade data onboarding pipeline built to solve the real Forward-Deployed Engineer problem: turning a customer's messy CSV into your canonical schema in a repeatable, auditable, non-scary way.\n\nThe pipeline profiles uploaded data, scores column-to-field mappings using deterministic signals (fuzzy matching + embeddings) first, and calls an LLM only for genuinely ambiguous leftovers. A human reviews and confirms every mapping in a Next.js UI. Only then does a Pandera-validated, fully-tested deterministic transform engine load the data — making every retried load idempotent via natural_key + content_hash.\n\nRejected rows surface in an exception queue with error codes, explanations, and suggested fixes — nothing is silently dropped. Every mapping is a versioned, diffable JSON document. The LLM proposes, the deterministic engine executes — always.",
+    tags: ["AI", "FastAPI", "Next.js", "PostgreSQL", "Docker"],
+    image: p11,
+    github: "https://github.com/ritigya03/ConduitAI",
+    live: "https://conduit-ai-eosin.vercel.app",
+  },
+  {
+    title: "Nutrinani",
+    subtitle: "GenAI / Healthcare / Team Project",
+    description: "A family-first wellness app that scans food labels, delivers instant safe/unsafe verdicts, and offers personalized recipes and a conversational health assistant.",
+    longDescription: "Nutrinani is a healthcare and wellness GenAI app built as a team project, designed around the idea that every family member has unique dietary needs, allergies, and health conditions.\n\nThe app features Netflix-style family profiles so every recommendation — from food verdicts to recipes — is tuned to the active profile. A barcode + OCR food label scanner (ZXing + Tesseract.js) gives instant safe/unsafe verdicts with ingredient-level reasoning. A smart pantry tracker enables one-click 'cook with what I have' recipe generation.\n\nAt its core is Nani, a conversational GenAI health assistant powered by Amazon Bedrock and Gemini, with voice input support and persistent chat history. The backend runs on AWS Lambda + API Gateway (serverless), DynamoDB for storage, AWS Cognito for auth with Google OAuth, and is deployed on Vercel.",
+    tags: ["GenAI", "React", "AWS Lambda", "DynamoDB", "Team"],
+    image: p12,
+    github: "https://github.com/SirjanSingh/nutrinani",
+    live: "https://nutrinani.vercel.app",
   },
 ];
 
